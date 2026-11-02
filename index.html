@@ -144,6 +144,16 @@ html[data-lang="en"] .card .t{font-size:12px;font-style:normal}
 html[data-lang="en"] .card p,
 html[data-lang="en"] .note,
 html[data-lang="en"] .case{font-size:13px;line-height:1.62}
+/* 英文正文两端对齐，消除右缘参差 */
+html[data-lang="en"] .lead,
+html[data-lang="en"] .card p,
+html[data-lang="en"] .note,
+html[data-lang="en"] .case{
+  text-align:justify;
+  text-align-last:left;
+  -webkit-hyphens:auto;
+  hyphens:auto;
+}
 html[data-lang="en"] .contact .k{min-width:58px}
 html[data-lang="en"] .sub{font-size:13.5px;letter-spacing:.5px;
   overflow-wrap:anywhere;word-break:break-word}
