@@ -356,7 +356,7 @@ html[data-lang="en"] .sub{font-size:13.5px;letter-spacing:.5px;
       <p><span class="k" data-i18n="contact.mail.k"></span><span data-i18n="contact.mail.v"></span></p>
       <p><span class="k" data-i18n="contact.web.k"></span><span data-i18n="contact.web.v"></span></p>
       <footer data-i18n="contact.foot"></footer>
-      <img class="qr" src="qr.png" alt="二维码">
+      <img class="qr" id="contactQr" src="qr.png" alt="二维码">
     </div>
   </section>
 
@@ -577,6 +577,9 @@ function applyLang(lang){
   if(!I18N[lang]) return;
   document.documentElement.setAttribute('data-lang', lang);
   document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+  /* contact 二维码按语种切换：中文用 qr.png，英文指向官网英文页 */
+  const qr = document.getElementById('contactQr');
+  if(qr) qr.src = (lang === 'en') ? 'qr_en.png' : 'qr.png';
   document.title = lang === 'en'
     ? 'Watson & Band · Cross-Border Legal Services'
     : '华诚 · 涉外法律服务';
